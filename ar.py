@@ -54,7 +54,7 @@ while(True):
         min_pixel = np.percentile(image_bw_resized_inverted, pixel_filter)
         image_bw_resized_inverted_scaled = np.clip(image_bw_resized_inverted - min_pixel, 0, 255)
         max_pixel = np.max(image_bw_resized_inverted)
-        image_bw_resized_inverted_scaled = np.asarray(image_bw_resized_scaled)/max_pixel
+        image_bw_resized_inverted_scaled = np.asarray(image_bw_resized_inverted_scaled)/max_pixel
         test_sample = np.array(image_bw_resized_inverted_scaled).reshape(1, 784)
         test_pred = clf.predict(test_sample)
         print("Predicted class is:", test_pred)
